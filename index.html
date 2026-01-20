@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Under Maintenance</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Dynamic background */
+body {
+  min-height: 100vh;
+  background: linear-gradient(
+    120deg,
+    #e6eef3,
+    #f4f7f9,
+    #e3edf3,
+    #f1f6f8
+  );
+  background-size: 420% 420%;
+  animation: bgMove 14s ease-in-out infinite;
+  overflow-x: hidden;
+}
+
+@keyframes bgMove {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Logo */
+.logo {
+  position: fixed;
+  top: 28px;
+  left: 36px;
+  z-index: 10;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.logo.hide {
+  opacity: 0;
+  transform: translateY(-12px);
+  pointer-events: none;
+}
+.logo img {
+  height: 40px;
+}
+
+/* Title – FIXED */
+.hero-title {
+  margin: 120px auto 0;
+  max-width: 1200px;
+  padding: 0 24px;
+  text-align: center;
+
+  font-size: 42px;        /* ↓ 缩小 */
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.6px;
+  color: #0f172a;
+
+  white-space: normal;    /* 允许换行 */
+  word-break: break-word;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 60px 40px;
+}
+
+/* Main layout */
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Text */
+.text p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #334155;
+  margin-bottom: 16px;
+}
+
+.text .contact {
+  margin-top: 16px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* Single paragraph footer */
+.footer {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.9;
+}
+
+/* Image */
+.image {
+  display: flex;
+  justify-content: center;
+}
+.image img {
+  width: 100%;
+  max-width: 580px;
+}
+
+/* Bottom QR */
+.qr-section {
+  margin: 60px auto 40px;
+  text-align: center;
+}
+.qr-section img {
+  width: 140px;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .hero-title {
+    font-size: 30px;   /* 移动端再小一档 */
+    margin-top: 100px;
+  }
+
+  .container {
+    padding: 60px 24px 30px;
+    text-align: center;
+  }
+
+  .main {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Logo -->
+<div class="logo" id="logo">
+  <img src="https://cdn.shopify.com/s/files/1/0932/5222/3279/files/532aa45224fcf715ffe97ba538b05b67.png?v=1768460403" alt="Logo">
+</div>
+
+<!-- Title -->
+<div class="hero-title">
+  Zhejiang Yokey Intelligent Manufacturing Technology Co., Ltd. – Website Under Maintenance
+</div>
+
+<!-- Content -->
+<div class="container">
+  <div class="main">
+
+    <div class="text">
+      <p>Dear Customers and Partners,</p>
+
+      <p>
+        To further improve our website service quality and enhance the presentation
+        of our products and solutions, our official website is currently undergoing
+        an upgrade and maintenance process.
+      </p>
+
+      <p>
+        During this period, the website may be temporarily unavailable. If you would
+        like to inquire about robotic joint modules, motors, gear reducers, drives,
+        sensors, or customized solutions and cooperation opportunities, please feel
+        free to contact us through the information below. We will respond to you as
+        soon as possible.
+      </p>
+
+      <p class="contact">
+        Business & Technical Inquiry:<br>
+        Mr. He &nbsp; +86 13811466858 ｜ hxl@yokeyrobo.com
+      </p>
+
+      <div class="footer">
+        Thank you for your understanding and support. We will notify you immediately
+        once the upgrade is completed.<br>
+        Zhejiang Yokey Intelligent Manufacturing Technology Co., Ltd.<br>
+        January 15, 2026
+      </div>
+    </div>
+
+    <div class="image">
+      <img src="https://cdn.shopify.com/s/files/1/0932/5222/3279/files/ChatGPT_Image_2026_1_12_16_03_06.png?v=1768274199" alt="Robotic Joint Module">
+    </div>
+
+  </div>
+
+  <div class="qr-section">
+    <img src="https://cdn.shopify.com/s/files/1/0932/5222/3279/files/WhatsApp.png?v=1768463438" alt="WhatsApp QR Code">
+  </div>
+</div>
+
+<script>
+let lastScrollTop = 0;
+const logo = document.getElementById('logo');
+
+window.addEventListener('scroll', () => {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  if (scrollTop > lastScrollTop && scrollTop > 80) {
+    logo.classList.add('hide');
+  } else {
+    logo.classList.remove('hide');
+  }
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+});
+</script>
+
+</body>
+</html>
