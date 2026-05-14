@@ -4,28 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yokeyrobo</title>
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="shortcut icon" href="/favicon.ico">
-<link rel="apple-touch-icon" href="/favicon.ico">
+
 <style>
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Helvetica, Arial, sans-serif;
+    Arial, sans-serif;
 }
 
-/* Dynamic background */
 body {
   min-height: 100vh;
-  background: linear-gradient(
-    120deg,
-    #e6eef3,
-    #f4f7f9,
-    #e3edf3,
-    #f1f6f8
-  );
+  background: linear-gradient(120deg, #e6eef3, #f4f7f9, #e3edf3, #f1f6f8);
   background-size: 420% 420%;
   animation: bgMove 14s ease-in-out infinite;
   overflow-x: hidden;
@@ -37,7 +28,6 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Logo */
 .logo {
   position: fixed;
   top: 28px;
@@ -54,151 +44,177 @@ body {
   height: 40px;
 }
 
-/* Title – FIXED */
 .hero-title {
-  margin: 120px auto 0;
-  max-width: 1200px;
-  padding: 0 24px;
+  margin-top: 140px;
   text-align: center;
-
-  font-size: 42px;        /* ↓ 缩小 */
+  font-size: 54px;
   font-weight: 600;
-  line-height: 1.3;
-  letter-spacing: 0.6px;
+  letter-spacing: 1.2px;
   color: #0f172a;
-
-  white-space: normal;    /* 允许换行 */
-  word-break: break-word;
+  white-space: nowrap;
 }
 
-/* Container */
 .container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 80px 60px 40px;
+  padding: 56px 28px 40px;
 }
 
-/* Main layout */
-.main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
+.section {
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(148,163,184,0.22);
+  border-radius: 18px;
+  padding: 28px 30px;
+  box-shadow: 0 10px 30px rgba(15,23,42,0.06);
 }
 
-/* Text */
-.text p {
+.section + .section {
+  margin-top: 22px;
+}
+
+.section h2 {
+  font-size: 20px;
+  color: #0f172a;
+  margin-bottom: 14px;
+}
+
+.section p {
   font-size: 16px;
-  line-height: 1.9;
+  line-height: 2;
   color: #334155;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
-.text .contact {
-  margin-top: 16px;
+.section p:last-child {
+  margin-bottom: 0;
+}
+
+.contact {
   font-weight: 600;
   color: #0f172a;
 }
 
-/* Single paragraph footer */
 .footer {
-  margin-top: 16px;
   font-size: 14px;
   color: #475569;
   line-height: 1.9;
 }
 
-/* Image */
-.image {
+.top-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.image-card {
   display: flex;
   justify-content: center;
-}
-.image img {
-  width: 100%;
-  max-width: 580px;
+  align-items: center;
 }
 
-/* Bottom QR */
+.image-card img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 16px;
+}
+
 .qr-section {
-  margin: 60px auto 40px;
+  margin: 22px auto 0;
   text-align: center;
 }
+
 .qr-section img {
-  width: 140px;
+  width: 160px;
+  max-width: 100%;
 }
 
-/* Mobile */
 @media (max-width: 900px) {
   .hero-title {
-    font-size: 30px;   /* 移动端再小一档 */
-    margin-top: 100px;
+    font-size: 32px;
+    white-space: normal;
+    padding: 0 20px;
   }
 
   .container {
-    padding: 60px 24px 30px;
-    text-align: center;
+    padding: 28px 16px 20px;
   }
 
-  .main {
+  .top-grid {
     grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 22px 18px;
+  }
+
+  .image-card img {
+    max-width: 100%;
   }
 }
 </style>
 </head>
 
 <body>
-
-<!-- Logo -->
 <div class="logo" id="logo">
-  <img src="https://cdn.shopify.com/s/files/1/0932/5222/3279/files/532aa45224fcf715ffe97ba538b05b67.png?v=1768460403" alt="Logo">
+  <img src="https://cdn.shopify.com/s/files/1/0932/5222/3279/files/532aa45224fcf715ffe97ba538b05b67.png?v=1768460403" alt="Yokeyrobo Logo">
 </div>
 
-<!-- Title -->
-<div class="hero-title">
-  Yokeyrobo | Official Site Under Scheduled Upgrade
-</div>
+<div class="hero-title">Yokeyrobo | Website Upgrade Notice</div>
 
-<!-- Content -->
 <div class="container">
-  <div class="main">
-
-    <div class="text">
-      <p>Dear Customers and Partners,</p>
+  <div class="top-grid">
+    <div class="section">
+      <h2>Notice</h2>
+      <p>Dear customers and partners,</p>
 
       <p>
-        To further improve our website service quality and enhance the presentation
-        of our products and solutions, our official website is currently undergoing
-        an upgrade and maintenance process.
+        To further improve the quality of our website services and enhance the presentation of our products, technologies, and solutions, our official website is currently undergoing an upgrade and maintenance process.
       </p>
 
       <p>
-        During this period, the website may be temporarily unavailable. If you would
-        like to inquire about robotic joint modules, motors, gear reducers, drives,
-        sensors, or customized solutions and cooperation opportunities, please feel
-        free to contact us through the information below. We will respond to you as
-        soon as possible.
+        During this period, the website may not be accessible as usual. For inquiries regarding robotic joint modules, motors, reducers, drivers, sensors, technical specifications, customized solutions, or business cooperation, please contact us through the following channels. We will respond as soon as possible.
       </p>
 
       <p class="contact">
-        Business & Technical Inquiry:<br>
-        Mr. He &nbsp; +86 13811466858 ｜ hxl@yokeyrobo.com
+        Business Cooperation &amp; Technical Consultation:<br>
+        Mr. He 17744539472 ｜ hxl@yokeyrobo.com
       </p>
 
       <div class="footer">
-        Thank you for your understanding and support. We will notify you immediately
-        once the upgrade is completed.<br>
-        Zhejiang Yokeyrobo Intelligent Manufacturing Technology Co., Ltd.<br>        
+        Thank you for your understanding and support. We will notify you as soon as the upgrade is completed.<br>
+        Zhejiang Yokey Intelligent Manufacturing Technology Co., Ltd.
       </div>
     </div>
 
-    <div class="image">
-      <img src="https://cdn.shopify.com/s/files/1/0932/5222/3279/files/ChatGPT_Image_2026_1_12_16_03_06.png?v=1768274199" alt="Robotic Joint Module">
+    <div class="image-card">
+      <img src="https://cdn.shopify.com/s/files/1/0932/5222/3279/files/ChatGPT_Image_2026_1_12_16_03_06.png?v=1768274199" alt="Yokeyrobo Product Image">
     </div>
+  </div>
 
+  <div class="section" style="margin-top:22px;">
+    <h2>Company Profile</h2>
+
+    <p>
+      Zhejiang Yokey Intelligent Manufacturing Technology Co., Ltd., founded in 2025, is a technology-driven company specializing in the research and development of core technologies for embodied intelligent power systems and high-end intelligent manufacturing. With its manufacturing headquarters located in Yueqing, Zhejiang, and its R&amp;D base in Beijing, the company has established a dual-core strategic layout.
+    </p>
+
+    <p>
+      The Yueqing manufacturing headquarters is deeply integrated with and collaboratively developed alongside Taibang Motor Industry Group, which has more than 30 years of experience in the geared motor industry. Leveraging Taibang Group’s mature manufacturing system, industrial expertise, and supply chain advantages in precision transmission and geared motors, Yokeyrobo is supported by strong capabilities in large-scale production and quality assurance.
+    </p>
+
+    <p>
+      Supported by a mature manufacturing system, the company brings together experts from renowned academic institutions and the embodied intelligence industry to continuously drive technological iteration and build a full-chain ecosystem integrating R&amp;D, production, sales, and service. The company has achieved full-stack independent R&amp;D and mass production of core components including planetary reducers, harmonic reducers, cycloidal reducers, servo motors, frameless motors, control drivers, and integrated joint modules. Its products are widely applied in humanoid robots, quadruped robots, collaborative robotic arms, electric grippers, commercial aerospace, low-altitude economy, marine engineering, and other fields.
+    </p>
+
+    <p>
+      Based on its advantages in self-developed core components and large-scale manufacturing, the company is further expanding into the R&amp;D and industrialization of quadruped robots and humanoid robot systems. With strong technological barriers and full industrial chain capabilities, Yokeyrobo is committed to becoming an industry benchmark in the field of core components and complete robot systems for embodied intelligence.
+    </p>
   </div>
 
   <div class="qr-section">
-    <img src="https://cdn.shopify.com/s/files/1/0932/5222/3279/files/WhatsApp.png?v=1768463438" alt="WhatsApp QR Code">
+    <img src="https://cdn.shopify.com/s/files/1/0932/5222/3279/files/weixin.png?v=1768460739" alt="WeChat QR Code">
   </div>
 </div>
 
@@ -216,16 +232,5 @@ window.addEventListener('scroll', () => {
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
 </script>
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
